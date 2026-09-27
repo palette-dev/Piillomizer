@@ -14,6 +14,9 @@ HAS_KEY = Has("Key")  # Hmm, what could this be? A little foreshadowing perhaps?
 
 def set_all_rules(world: MLDTWorld) -> None:
     # In order for AP to generate an item layout that is actually possible for the player to complete,
+    # we need to define rules for our Entrances and Locations.
+    # Note: Regions do not have rules, the Entrances connecting them do!
+    # We'll do entrances first, then locations, and then finally we set our victory condition.
     set_all_entrance_rules(world)
     set_all_location_rules(world)
     set_completion_condition(world)
